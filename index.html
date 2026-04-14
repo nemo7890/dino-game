@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dino Multiplayer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="light-mode">
+    <div id="app">
+        <!-- Auth / Login Screen -->
+        <div id="auth-screen" class="screen">
+            <h1>DINO MULTIPLAYER</h1>
+            <div class="lobby-animation" id="lobby-bg"></div>
+            <div class="auth-buttons">
+                <button id="google-login-btn">Login with Google</button>
+                <button id="guest-login-btn">Play as Guest</button>
+            </div>
+        </div>
+
+        <!-- Main Menu -->
+        <div id="menu-screen" class="screen hidden">
+            <nav>
+                <button id="theme-toggle">🌓</button>
+                <div id="user-info"></div>
+            </nav>
+            <div class="menu-content">
+                <button id="random-match-btn" class="primary-btn">Random Match</button>
+                <button id="invite-friends-btn">Invite Friends</button>
+                <div id="invite-section" class="hidden">
+                    <p id="room-code-display"></p>
+                    <input type="text" id="join-code-input" placeholder="Enter Room Code">
+                    <button id="join-btn">Join Room</button>
+                </div>
+            </div>
+            <footer>
+                <button id="dev-btn">Developer</button>
+                <button id="donate-btn">Donate</button>
+            </footer>
+        </div>
+
+        <!-- Matchmaking Screen -->
+        <div id="matchmaking-screen" class="screen hidden">
+            <h2 id="status-text">Searching for players...</h2>
+            <div class="player-list" id="waiting-players"></div>
+            <p>Min 2 players to start. Max 7.</p>
+            <button id="cancel-match-btn">Cancel</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <div id="game-hud">
+                <div id="leaderboard"></div>
+                <button id="leave-game-btn">Leave Game</button>
+            </div>
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <!-- Modals -->
+        <div id="dev-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Developer Info</h3>
+                <p>Follow me on:</p>
+                <a href="#">Twitter</a> | <a href="#">GitHub</a>
+                <button class="close-modal">Close</button>
+            </div>
+        </div>
+
+        <div id="donate-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Support the Project</h3>
+                <p>UPI ID: yourname@upi</p>
+                <p>BTC: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
+                <button class="close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
