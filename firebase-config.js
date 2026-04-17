@@ -3,13 +3,14 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signInAnonymously } from 
 import { getDatabase, ref, set, onValue, update, push, onDisconnect, remove } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT-default-rtdb.firebaseio.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyB-HUsDD4_9Vf46HEVGHYULr9BuwdVDmoU",
+  authDomain: "dino-multiplayer-85737.firebaseapp.com",
+  databaseURL: "https://dino-multiplayer-85737-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "dino-multiplayer-85737",
+  storageBucket: "dino-multiplayer-85737.firebasestorage.app",
+  messagingSenderId: "740514985206",
+  appId: "1:740514985206:web:5f5714188152c3c06ca8d7"
+
 };
 
 const app = initializeApp(firebaseConfig);
