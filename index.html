@@ -3,35 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Dino Multiplayer</title>
+    <title>Multiplayer Dino</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body class="light-mode">
     <div id="app">
         <!-- Auth / Login Screen -->
         <div id="auth-screen" class="screen">
             <h1>DINO MULTIPLAYER</h1>
-            <div class="lobby-animation" id="lobby-bg"></div>
             <div class="auth-buttons">
                 <button id="google-login-btn">Login with Google</button>
                 <button id="guest-login-btn">Play as Guest</button>
             </div>
         </div>
 
-        <!-- Main Menu -->
+        <!-- Guest Name Entry Modal -->
+        <div id="guest-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Enter Your Nickname</h3>
+                <input type="text" id="guest-name-input" placeholder="Dino Racer">
+                <button id="confirm-guest-btn">Start Playing</button>
+            </div>
+        </div>
+
+        <!-- Main Menu Screen -->
         <div id="menu-screen" class="screen hidden">
             <nav>
                 <button id="theme-toggle">🌓</button>
                 <div id="user-info"></div>
             </nav>
             <div class="menu-content">
-                <button id="random-match-btn" class="primary-btn">Random Match</button>
-                <button id="invite-friends-btn">Invite Friends</button>
-                <div id="invite-section" class="hidden">
-                    <p id="room-code-display"></p>
-                    <input type="text" id="join-code-input" placeholder="Enter Room Code">
-                    <button id="join-btn">Join Room</button>
+                <button id="solo-mode-btn" class="primary-btn">SOLO MODE</button>
+                <hr>
+                <h3 style="margin-top:0">Multiplayer</h3>
+                <button id="random-match-btn">Random Match</button>
+                <button id="room-system-btn">Room System</button>
+                
+                <div id="room-controls" class="hidden">
+                    <button id="create-room-btn">Create Private Room</button>
+                    <div class="join-area">
+                        <input type="text" id="join-code-input" placeholder="Room Code">
+                        <button id="join-btn">Join</button>
+                    </div>
                 </div>
             </div>
             <footer>
@@ -43,41 +56,49 @@
         <!-- Matchmaking Screen -->
         <div id="matchmaking-screen" class="screen hidden">
             <h2 id="status-text">Searching for players...</h2>
+            <div id="room-info" class="hidden">
+                <p>Room: <span id="display-code" style="font-weight:bold; color:#2ecc71"></span> 
+                   <button id="copy-code" style="padding:5px 10px; font-size:12px">Copy</button>
+                </p>
+                <button id="copy-link" style="padding:5px 10px; font-size:12px">Copy Invite Link</button>
+            </div>
             <div class="player-list" id="waiting-players"></div>
-            <p>Min 2 players to start. Max 7.</p>
-            <button id="cancel-match-btn">Cancel</button>
+            <p style="font-size: 0.9rem; opacity: 0.7;">Waiting for at least 2 players to start...</p>
+            <button id="cancel-match-btn" class="danger-btn">Cancel Match</button>
         </div>
 
         <!-- Game Screen -->
         <div id="game-screen" class="screen hidden">
             <div id="game-hud">
                 <div id="leaderboard"></div>
-                <button id="leave-game-btn">Leave Game</button>
+                <button id="leave-game-btn">Leave</button>
             </div>
             <canvas id="gameCanvas"></canvas>
+            <p class="mobile-hint">Tap screen to jump</p>
         </div>
 
-        <!-- Modals -->
+        <!-- Utility Modals -->
         <div id="dev-modal" class="modal hidden">
             <div class="modal-content">
-                <h3>Developer Info</h3>
-                <p>Follow me on:</p>
+                <h3>Developer</h3>
+                <p>Built with Firebase & JS</p>
                 <a href="#">Twitter</a> | <a href="#">GitHub</a>
+                <br><br>
                 <button class="close-modal">Close</button>
             </div>
         </div>
 
         <div id="donate-modal" class="modal hidden">
             <div class="modal-content">
-                <h3>Support the Project</h3>
-                <p>UPI ID: argha77@fam</p>
-                <p>SOLANA: 6fkFFFUhonmcZt9MCTUgPnEBoFzR8xe9HWCCgVyQLTc7</p>
+                <h3>Donate</h3>
+                <p>UPI ID: yourname@upi</p>
+                <p>BTC: 1A1zP1eP5QGefi2MPTfTL5SLmv7DivfNa</p>
                 <button class="close-modal">Close</button>
             </div>
         </div>
     </div>
 
-    <!-- Firebase SDKs -->
+    <!-- Script Imports -->
     <script type="module" src="firebase-config.js"></script>
     <script type="module" src="script.js"></script>
 </body>
