@@ -7,7 +7,7 @@ export default function DeveloperFooter() {
         <span>Project ID: dino-multiplayer-85737</span>
       </div>
       <a 
-        href="https://github.com/Argha"
+        href="https://github.com/nemo7890"
         target="_blank"
         rel="noopener noreferrer"
         className="group flex items-center space-x-2 text-xs hover:text-black dark:hover:text-white transition-colors"
