@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-mono: "VT323", system-ui, monospace;
+}
+
+body {
+  @apply bg-[#f0f0f0] text-gray-900 dark:bg-[#202124] dark:text-[#e8eaed] transition-colors duration-300 text-lg;
+  cursor: url('/images/dino.png'), auto;
+}
+
+button, a, input, [role="button"] {
+  cursor: url('/images/dino.png'), pointer !important;
+}
+
